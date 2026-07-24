@@ -30,7 +30,7 @@ const SearchBox = () => {
         loadMembers();
     }, []);
 
-    const handleSearch = () => {
+    const performSearch = () => {
         const value = keyword.trim();
 
         if (!value) {
@@ -58,6 +58,11 @@ const SearchBox = () => {
 
             setSearching(false);
         }, 300);
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault(); // Prevent page reload
+        performSearch();
     };
 
     return (
@@ -130,52 +135,65 @@ const SearchBox = () => {
 
                         <div className="mt-6 lg:mt-10 w-full">
 
-                            <div className="flex flex-col md:flex-row gap-4">
+                            <form
+                                onSubmit={handleSubmit}
+                                className="flex flex-col md:flex-row gap-4"
+                            >
 
                                 <input
                                     type="text"
                                     placeholder="Enter NID or Birth Certificate Number"
                                     className="
-                                                w-full
-                                                h-14
-                                                text-base
-                                                bg-transparent
-                                                border-0
-                                                border-b-2
-                                                 border-pink-300
-                                                rounded-none
-                                                outline-none
-                                                focus:outline-none
-                                                focus:ring-0
-                                                focus:border-primary
-                                                px-2
+                w-full
+                h-14
+                text-base
+                bg-transparent
+                border-0
+                border-b-2
+                border-pink-300
+                rounded-none
+                outline-none
+                focus:outline-none
+                focus:ring-0
+                focus:border-primary
+                px-2
 
-                                                placeholder:text-sm
-                                                sm:placeholder:text-base
-                                                md:placeholder:text-lg
-
-                                                "
+                placeholder:text-sm
+                sm:placeholder:text-base
+                md:placeholder:text-lg
+            "
                                     value={keyword}
                                     onChange={(e) => setKeyword(e.target.value)}
-                                    onKeyDown={(e) => {
-                                        if (e.key === "Enter") {
-                                            handleSearch();
-                                        }
-                                    }}
                                 />
 
                                 <button
-                                    onClick={handleSearch}
-                                    className="btn h-14 px-6 lg:px-10 rounded-lg border-0 text-white text-base font-semibold
-                                        bg-gradient-to-r from-[#EC008C] via-[#E6007E] to-[#B4006B]
-                                        hover:scale-105 hover:shadow-xl
-                                        transition-all duration-300 ease-in-out"
+                                    type="submit"
+                                    className="
+                btn
+                h-14
+                px-6
+                lg:px-10
+                rounded-lg
+                border-0
+                text-white
+                text-base
+                font-semibold
+                bg-gradient-to-r
+                from-[#EC008C]
+                via-[#E6007E]
+                to-[#B4006B]
+                hover:scale-105
+                hover:shadow-xl
+                transition-all
+                duration-300
+                ease-in-out
+            "
                                 >
                                     <FaSearch className="mr-2" />
                                     Search
                                 </button>
 
-                            </div>
+                            </form>
 
                         </div>
 
