@@ -66,9 +66,9 @@ const SearchBox = () => {
             <div className="w-full px-3 sm:px-5 md:px-8 lg:px-10 xl:px-12 2xl:px-16 py-6">
 
                 {/* Search Card */}
-                <div className="card bg-base-100 shadow-2xl rounded-2xl w-full">
+                <div className=" bg-base-100 shadow-2xl rounded-2xl w-full">
 
-                    <div className="card-body p-6 md:p-8 lg:p-10">
+                    <div className="card-body p-2 md:p-8 lg:p-10">
                         {/* Logo */}
                         <div className="flex  w-full md:w-auto">
                             <img
@@ -86,7 +86,7 @@ const SearchBox = () => {
                             {/* Title */}
                             <div className="flex-1 text-center">
 
-                                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary">
+                                <h1 className="text-3xl sm:text-2xl lg:text-5xl font-bold text-primary">
                                     Member Insight
                                 </h1>
 
@@ -103,7 +103,7 @@ const SearchBox = () => {
 
                         {/* Search Area */}
 
-                        <div className="mt-10">
+                        <div className="mt-6 lg:mt-10 w-full">
 
                             <div className="flex flex-col md:flex-row gap-4">
 
