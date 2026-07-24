@@ -5,6 +5,7 @@ import Loader from "./Loader";
 import NoData from "./NoData";
 import MemberDetails from "./MemberDetails";
 import bracLogo2 from "../images/BRAC-logo.png";
+import Footer from "./Footer";
 
 const SearchBox = () => {
     const [members, setMembers] = useState([]);
@@ -62,31 +63,37 @@ const SearchBox = () => {
     return (
         <div className="min-h-screen bg-base-200 w-full">
 
-            <div className="
+            <div
+                className="
         w-full
+       h-screen
         px-2
         sm:px-4
         md:px-8
         lg:px-10
         xl:px-12
-        2xl:px-16
-        py-4
-        md:py-6
-    ">
+        py-3
+        md:py-5
+    "
+            >
 
                 {/* Search Card */}
                 <div
                     className="
         w-full
+        h-full
         bg-base-100
         rounded-xl
         md:rounded-2xl
         shadow-xl
         md:shadow-2xl
+        flex
+        flex-col
     "
+
                 >
 
-                    <div className="card-body p-2 md:p-8 lg:p-10">
+                    <div className="card-body p-2 md:p-8 lg:p-10 flex-1">
                         {/* Logo */}
                         <div className="flex  w-full md:w-auto">
                             <img
@@ -172,41 +179,48 @@ const SearchBox = () => {
 
                         </div>
 
+
                     </div>
+                    {/* Loader */}
+
+                    {loading && (
+                        <div className="mt-10">
+                            <Loader />
+                        </div>
+                    )}
+
+                    {searching && (
+                        <div className="mt-10">
+                            <Loader />
+                        </div>
+                    )}
+
+                    {/* Error */}
+
+                    {!loading && error && (
+                        <div className="mt-8">
+                            <NoData message={error} />
+                        </div>
+                    )}
+
+                    {/* Member Details */}
+
+                    {member && (
+                        <div className="mt-8 w-full">
+                            <MemberDetails member={member} />
+                        </div>
+                    )}
+
+                    <Footer />
 
                 </div>
 
-                {/* Loader */}
 
-                {loading && (
-                    <div className="mt-10">
-                        <Loader />
-                    </div>
-                )}
 
-                {searching && (
-                    <div className="mt-10">
-                        <Loader />
-                    </div>
-                )}
-
-                {/* Error */}
-
-                {!loading && error && (
-                    <div className="mt-8">
-                        <NoData message={error} />
-                    </div>
-                )}
-
-                {/* Member Details */}
-
-                {member && (
-                    <div className="mt-8 w-full">
-                        <MemberDetails member={member} />
-                    </div>
-                )}
 
             </div>
+
+
 
         </div>
     );
