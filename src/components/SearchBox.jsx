@@ -60,13 +60,31 @@ const SearchBox = () => {
     };
 
     return (
-        <div className="min-h-screen bg-base-200 w-full flex justify-center items-start p-5">
+        <div className="min-h-screen bg-base-200 w-full">
 
-            {/* Main Container */}
-            <div className="w-full px-3 sm:px-5 md:px-8 lg:px-10 xl:px-12 2xl:px-16 py-6">
+            <div className="
+        w-full
+        px-2
+        sm:px-4
+        md:px-8
+        lg:px-10
+        xl:px-12
+        2xl:px-16
+        py-4
+        md:py-6
+    ">
 
                 {/* Search Card */}
-                <div className=" bg-base-100 shadow-2xl rounded-2xl w-full">
+                <div
+                    className="
+        w-full
+        bg-base-100
+        rounded-xl
+        md:rounded-2xl
+        shadow-xl
+        md:shadow-2xl
+    "
+                >
 
                     <div className="card-body p-2 md:p-8 lg:p-10">
                         {/* Logo */}
@@ -74,7 +92,7 @@ const SearchBox = () => {
                             <img
                                 src={bracLogo2}
                                 alt="BRAC Logo"
-                                className="w-20 md:w-32 lg:w-36"
+                                className="w-20 md:w-32 lg:w-36 p-2 md:p-0"
                             />
                         </div>
 
