@@ -124,6 +124,11 @@ const SearchBox = () => {
                                                 focus:ring-0
                                                 focus:border-primary
                                                 px-2
+
+                                                placeholder:text-sm
+                                                sm:placeholder:text-base
+                                                md:placeholder:text-lg
+
                                                 "
                                     value={keyword}
                                     onChange={(e) => setKeyword(e.target.value)}
