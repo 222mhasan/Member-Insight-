@@ -109,7 +109,21 @@ const SearchBox = () => {
                                 <input
                                     type="text"
                                     placeholder="Enter NID or Birth Certificate Number"
-                                    className="input input-bordered w-full flex-1 h-14 text-base"
+                                    className="
+                                                            w-full
+                                                            h-14
+                                                            text-base
+                                                            bg-transparent
+                                                            border-0
+                                                            border-b-2
+                                                            border-gray-300
+                                                            rounded-none
+                                                            outline-none
+                                                            focus:outline-none
+                                                            focus:ring-0
+                                                            focus:border-primary
+                                                            px-2
+                                                        "
                                     value={keyword}
                                     onChange={(e) => setKeyword(e.target.value)}
                                     onKeyDown={(e) => {
