@@ -69,18 +69,19 @@ const SearchBox = () => {
                 <div className="card bg-base-100 shadow-2xl rounded-2xl w-full">
 
                     <div className="card-body p-6 md:p-8 lg:p-10">
+                        {/* Logo */}
+                        <div className="flex  w-full md:w-auto">
+                            <img
+                                src={bracLogo2}
+                                alt="BRAC Logo"
+                                className="w-20 md:w-32 lg:w-36"
+                            />
+                        </div>
 
                         {/* Header */}
                         <div className="flex flex-col md:flex-row items-center justify-between gap-5">
 
-                            {/* Logo */}
-                            <div className="flex justify-center md:justify-start w-full md:w-auto">
-                                <img
-                                    src={bracLogo2}
-                                    alt="BRAC Logo"
-                                    className="w-28 md:w-32 lg:w-36"
-                                />
-                            </div>
+
 
                             {/* Title */}
                             <div className="flex-1 text-center">
@@ -110,20 +111,20 @@ const SearchBox = () => {
                                     type="text"
                                     placeholder="Enter NID or Birth Certificate Number"
                                     className="
-                                                            w-full
-                                                            h-14
-                                                            text-base
-                                                            bg-transparent
-                                                            border-0
-                                                            border-b-2
-                                                            border-gray-300
-                                                            rounded-none
-                                                            outline-none
-                                                            focus:outline-none
-                                                            focus:ring-0
-                                                            focus:border-primary
-                                                            px-2
-                                                        "
+                                                w-full
+                                                h-14
+                                                text-base
+                                                bg-transparent
+                                                border-0
+                                                border-b-2
+                                                 border-pink-300
+                                                rounded-none
+                                                outline-none
+                                                focus:outline-none
+                                                focus:ring-0
+                                                focus:border-primary
+                                                px-2
+                                                "
                                     value={keyword}
                                     onChange={(e) => setKeyword(e.target.value)}
                                     onKeyDown={(e) => {
@@ -135,9 +136,12 @@ const SearchBox = () => {
 
                                 <button
                                     onClick={handleSearch}
-                                    className="btn btn-primary h-14 px-10 text-base"
+                                    className="btn h-14 px-6 lg:px-10 rounded-lg border-0 text-white text-base font-semibold
+                                        bg-gradient-to-r from-[#EC008C] via-[#E6007E] to-[#B4006B]
+                                        hover:scale-105 hover:shadow-xl
+                                        transition-all duration-300 ease-in-out"
                                 >
-                                    <FaSearch />
+                                    <FaSearch className="mr-2" />
                                     Search
                                 </button>
 
