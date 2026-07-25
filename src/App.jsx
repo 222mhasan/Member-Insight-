@@ -1,25 +1,19 @@
-
-import './App.css'
+import "./App.css";
 // import Footer from './components/Footer'
-import SearchBox from './components/SearchBox'
+import SearchBox from "./components/SearchBox";
 
 function App() {
-
-
   return (
     <>
-      <section >
-
+      <section>
         <div>
-          <div className="min-h-screen bg-base-200 flex p-5">
+          <div className="min-h-screen bg-base-200 flex px-5">
             <SearchBox />
-            
           </div>
         </div>
       </section>
-
     </>
-  )
+  );
 }
 
-export default App
+export default App;
